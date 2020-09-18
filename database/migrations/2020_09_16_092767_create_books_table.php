@@ -21,9 +21,6 @@ class CreateBooksTable extends Migration
             $table->date('publication_date');
             $table->string('publisher');
             $table->string('isbn');
-            $table->float('weight')->nullable();
-            $table->float('height')->nullable();
-            $table->float('wide')->nullable();
             $table->text('description')->nullable();
             $table->string('author');
             $table->timestamps();

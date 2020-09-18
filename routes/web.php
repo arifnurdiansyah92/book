@@ -27,3 +27,15 @@ Route::group([
     Route::put('/category/{id}','CategoryController@update')->name('category.update');
     Route::get('/category/{id}/delete','CategoryController@delete')->name('category.delete');
 });
+
+
+Route::group([
+    "prefix" => "book"
+],function(){
+    Route::get('/','BookController@index')->name('book.index');
+    Route::get('/create','BookController@create')->name('book.create');
+    Route::post('/','BookController@store')->name('book.store');
+    Route::get('/{id}','BookController@show')->name('book.show');
+    Route::put('/{id}','BookController@update')->name('book.update');
+    Route::get('/{id}/delete','BookController@delete')->name('book.delete');
+});
