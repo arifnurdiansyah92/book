@@ -20,11 +20,8 @@
             <li class="nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title">Master Data</span></a>
                 <ul class="menu-content">
                     <li>
-                        <a href="#"><i></i><span class="menu-item">Category</span></a>
-                    </li>
-                    <li>
-                        <a href="#"><i></i><span class="menu-item">Author</span></a>
-                    </li>
+                        <a href="{{ route('category.index') }}"><i></i><span class="menu-item">Category</span></a>
+                    </li>   
                 </ul>
             </li>
             <li class="nav-item">

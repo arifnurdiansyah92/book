@@ -3,7 +3,7 @@
 <!-- BEGIN: Head-->
 
 <head>
-    <title>Book - Dashboard</title>
+    <title>{{ config('app.name') }} | @yield('title')</title>
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
 
     <!-- BEGIN: Vendor CSS-->
