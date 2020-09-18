@@ -17,12 +17,8 @@ class BookController extends Controller
                 route("home")
             ],
             [
-                "Master Data",
-                route("home")
-            ],
-            [
                 "Book",
-                route("home")
+                route("book.index")
             ]
         );
         $data = Book::get();
@@ -37,7 +33,7 @@ class BookController extends Controller
             ],
             [
                 "Book",
-                route("home")
+                route("book.index")
             ]
         );
         $data = Category::get();

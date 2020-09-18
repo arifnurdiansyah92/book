@@ -9,7 +9,7 @@
     <meta name="description" content="Vuexy admin is super flexible, powerful, clean &amp; modern responsive bootstrap 4 admin template with unlimited possibilities.">
     <meta name="keywords" content="admin template, Vuexy admin template, dashboard template, flat admin template, responsive admin template, web app">
     <meta name="author" content="PIXINVENT">
-    <title>Register Page - Vuexy - Bootstrap HTML admin template</title>
+    <title>dbBook - Register</title>
     <link rel="apple-touch-icon" href="/app-assets/images/ico/apple-icon-120.png">
     <link rel="shortcut icon" type="image/x-icon" href="/app-assets/images/ico/favicon.ico">
     <link href="https://fonts.googleapis.com/css?family=Montserrat:300,400,500,600" rel="stylesheet">
@@ -67,22 +67,19 @@
                                         <p class="px-2">Fill the below form to create a new account.</p>
                                         <div class="card-content">
                                             <div class="card-body pt-0">
-                                                <form action="index.html">
+                                                <form action="{{ route('user.register') }}" method="POST">
+                                                    {{ csrf_field() }}
                                                     <div class="form-label-group">
-                                                        <input type="text" id="inputName" class="form-control" placeholder="Name" required>
+                                                        <input type="text" name="name" id="inputName" class="form-control" placeholder="Name" required>
                                                         <label for="inputName">Name</label>
                                                     </div>
                                                     <div class="form-label-group">
-                                                        <input type="email" id="inputEmail" class="form-control" placeholder="Email" required>
+                                                        <input type="email" name="email" id="inputEmail" class="form-control" placeholder="Email" required>
                                                         <label for="inputEmail">Email</label>
                                                     </div>
                                                     <div class="form-label-group">
-                                                        <input type="password" id="inputPassword" class="form-control" placeholder="Password" required>
+                                                        <input type="password" name="password" id="inputPassword" class="form-control" placeholder="Password" required>
                                                         <label for="inputPassword">Password</label>
-                                                    </div>
-                                                    <div class="form-label-group">
-                                                        <input type="password" id="inputConfPassword" class="form-control" placeholder="Confirm Password" required>
-                                                        <label for="inputConfPassword">Confirm Password</label>
                                                     </div>
                                                     <div class="form-group row">
                                                         <div class="col-12">
@@ -99,7 +96,7 @@
                                                             </fieldset>
                                                         </div>
                                                     </div>
-                                                    <a href="auth-login.html" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
+                                                    <a href="{{ route('home') }}" class="btn btn-outline-primary float-left btn-inline mb-50">Login</a>
                                                     <button type="submit" class="btn btn-primary float-right btn-inline mb-50">Register</a>
                                                 </form>
                                             </div>

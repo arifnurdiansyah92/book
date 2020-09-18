@@ -28,6 +28,13 @@ Route::group([
     Route::get('/category/{id}/delete','CategoryController@delete')->name('category.delete');
 });
 
+Route::post('login','LoginController@login')->name('login');
+Route::get('logout','LoginController@logout')->name('logout');
+Route::get('register', function(){
+    return view('pages.auth.register');
+})->name('register');
+Route::post('register', 'UserController@store')->name('user.register');
+
 
 Route::group([
     "prefix" => "book"

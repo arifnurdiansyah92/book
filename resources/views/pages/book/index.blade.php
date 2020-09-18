@@ -6,8 +6,10 @@
         <div class="col-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Books</h4>
+                    <h4 class="card-title">Books</h4>\
+                    @if(Auth::user()->role == 1)
                     <a href="{{ route('book.create') }}" class="btn btn-primary">New record</a>
+                    @endif
                 </div>
                 <div class="card-content">
                     <div class="card-body card-dashboard">
@@ -30,8 +32,10 @@
                                         <td>{{ $value->pages }}</td>
                                         <td>{{ $value->author }}</td>
                                         <td>
+                                            @if(Auth::user()->role == 1)
                                             <a href="{{ route('book.show',$value->id) }}" class="btn btn-sm btn-primary">Edit</a>
                                             <a href="{{ route('book.delete',$value->id) }}" class="btn btn-sm btn-danger">Delete</a>
+                                            @endif
                                         </td>
                                     </tr>
                                     @endforeach

@@ -11,22 +11,21 @@
     <div class="shadow-bottom"></div>
     <div class="main-menu-content">
         <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="nav-item">
-                <a href="#"><i class="feather icon-pie-chart"></i><span class="menu-title">Dashboard</span></a>
+            <li class="nav-item {{ Request::is("book*") ? 'active' : ''}}">
+                <a href="{{ route('book.index') }}"><i class="feather icon-book"></i><span class="menu-title">Book</span></a>
             </li>
-            <li class="nav-item">
-                <a href="#"><i class="feather icon-book"></i><span class="menu-title">Book</span></a>
-            </li>
-            <li class="nav-item"><a href="#"><i class="feather icon-list"></i><span class="menu-title">Master Data</span></a>
+            @if(Auth::user()->role == 1)
+            <li class="nav-item {{ Request::is("master-data*") ? 'has-sub open' : ''}}"><a href="#"><i class="feather icon-list"></i><span class="menu-title">Master Data</span></a>
                 <ul class="menu-content">
                     <li>
                         <a href="{{ route('category.index') }}"><i></i><span class="menu-item">Category</span></a>
                     </li>   
                 </ul>
             </li>
-            <li class="nav-item">
+            <li class="nav-item {{ Request::is("user*") ? 'active' : ''}}">
                 <a href="#"><i class="feather icon-users"></i><span class="menu-title">Users</span></a>
             </li>
+            @endif
             <li class="nav-item">
                 <a href="#"><i class="feather icon-log-out"></i><span class="menu-title">Logout</span></a>
             </li>
