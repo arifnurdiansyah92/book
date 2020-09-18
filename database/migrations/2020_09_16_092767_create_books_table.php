@@ -25,8 +25,7 @@ class CreateBooksTable extends Migration
             $table->float('height')->nullable();
             $table->float('wide')->nullable();
             $table->text('description')->nullable();
-            $table->unsignedBigInteger('author_id');
-            $table->foreign('author_id')->references('id')->on('authors')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('author');
             $table->timestamps();
         });
     }

@@ -1,0 +1,14 @@
+[
+    {
+        "name":"History",
+        "pretty_url":"history"
+    },
+    {
+        "name":"Action",
+        "pretty_url":"action"
+    },
+    {
+        "name":"Slice of Life",
+        "pretty_url":"slice-of-life"
+    }
+]

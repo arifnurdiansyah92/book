@@ -9,6 +9,9 @@
     <!-- BEGIN: Vendor CSS-->
     <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/vendors.min.css">
     <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/ui/prism.min.css">
+    <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/tables/datatable/datatables.min.css">
+    <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/extensions/toastr.css">
+
     <!-- END: Vendor CSS-->
 
     <!-- BEGIN: Theme CSS-->
@@ -21,6 +24,7 @@
 
     <!-- BEGIN: Page CSS-->
     <link rel="stylesheet" type="text/css" href="/app-assets/css/core/menu/menu-types/vertical-menu.css">
+    <link rel="stylesheet" type="text/css" href="/app-assets/vendors/css/extensions/toastr.css">
     <!-- END: Page CSS-->
 
     <!-- BEGIN: Custom CSS-->
@@ -77,6 +81,8 @@
 
     <!-- BEGIN: Page Vendor JS-->
     <script src="/app-assets/vendors/js/ui/prism.min.js"></script>
+    <script src="/app-assets/vendors/js/extensions/toastr.min.js"></script>
+
     <!-- END: Page Vendor JS-->
 
     <!-- BEGIN: Theme JS-->
@@ -84,6 +90,15 @@
     <script src="/app-assets/js/core/app.js"></script>
     <!-- END: Theme JS-->
 
+
+    <script>
+        @if($errors->any())
+			toastr.error("{{ $errors->first() }}");
+		@elseif(session()->has('success'))
+			toastr.success('{{ session()->get("success") }}');
+		@endif
+    </script>
+    @yield('js')
     <!-- BEGIN: Page JS-->
     <!-- END: Page JS-->
 
